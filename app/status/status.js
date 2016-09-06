@@ -14,8 +14,8 @@ angular.module('myApp.status', ['ngRoute'])
     method: 'GET',
     url: rootUrl + '/status'
   }).success(function(data, status, headers, config){
-    $scope.status = data;
-    console.log($scope.kong);
+    $scope.status = data.data;
+    console.log($scope.status);
   }).error(function(data,status,headers,config){
     console.log(status);
   });

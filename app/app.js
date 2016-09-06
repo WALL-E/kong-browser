@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.cluster',
   'myApp.kong',
   'myApp.apis',
+  'myApp.consumers',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
