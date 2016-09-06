@@ -9,6 +9,14 @@ angular.module('myApp.kong', ['ngRoute'])
     });
 }])
 
-.controller('KongCtrl', [function() {
-
+.controller('KongCtrl', ['$scope', '$http', function($scope, $http) {
+    $http({
+        method: 'GET',
+        url: 'http://172.28.32.102:8001/'
+    }).success(function(data, status, headers, config){
+        $scope.kong = data;
+        console.log($scope.kong);
+    }).error(function(data,status,headers,config){
+        console.log(status);
+    });
 }]);
