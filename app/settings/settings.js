@@ -33,8 +33,10 @@ angular.module('myApp.settings', ['ngRoute'])
 
   $scope.submit = function () {
     $scope.setItem("node", $scope.node);
+    $scope.$emit('node', $scope.node);
     alert("submit ok");
   }
 
   $scope.node = $scope.getItem("node");
-}]);
+  $scope.$emit('node', $scope.node);
+}])

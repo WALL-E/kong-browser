@@ -26,4 +26,10 @@ config(function (localStorageServiceProvider) {
       .setPrefix('kongbrowser')
       .setStorageType('localStorage')
       .setNotify(true, true)
-});
+})
+.controller('RootCtrl', ['$scope', 'localStorageService', function($scope, localStorageService) {
+  $scope.node = '';
+  $scope.$on('node', function(d, node) {
+    $scope.node = node;
+  });
+}]);
