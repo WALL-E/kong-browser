@@ -11,6 +11,7 @@ angular.module('myApp', [
   'myApp.apis',
   'myApp.consumers',
   'myApp.plugins',
+  'myApp.help',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

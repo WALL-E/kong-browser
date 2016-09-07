@@ -2,5 +2,5 @@ TODO
 
 1. add view: setting
    use html5 localstorage to save rootUrl
-2. add view: help
-3. use angularjs-resource service
+2. use angularjs-resource service
+3. internationalization (i18n) support
