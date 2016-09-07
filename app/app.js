@@ -31,5 +31,6 @@ config(function (localStorageServiceProvider) {
   $scope.node = '';
   $scope.$on('node', function(d, node) {
     $scope.node = node;
+    console.log("RootCtrl node:", $scope.node);
   });
 }]);
