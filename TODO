@@ -1,6 +1,5 @@
 TODO
 
-1. use bootstrap style
-  bower install bootstrap --save
-2. use html5 localstorage to save rootUrl
+1. use html5 localstorage to save rootUrl
   add view: setting
+2. use angularjs-resource service
