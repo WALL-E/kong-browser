@@ -1,5 +1,6 @@
 TODO
 
-1. use html5 localstorage to save rootUrl
-  add view: setting
-2. use angularjs-resource service
+1. add view: setting
+   use html5 localstorage to save rootUrl
+2. add view: help
+3. use angularjs-resource service
