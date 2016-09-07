@@ -12,10 +12,18 @@ angular.module('myApp', [
   'myApp.consumers',
   'myApp.plugins',
   'myApp.help',
-  'myApp.version'
+  'myApp.settings',
+  'myApp.version',
+  'LocalStorageModule',
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
   $routeProvider.otherwise({redirectTo: '/kong'});
-}]);
+}]).
+config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+      .setPrefix('kongbrowser')
+      .setStorageType('localStorage')
+      .setNotify(true, true)
+});
