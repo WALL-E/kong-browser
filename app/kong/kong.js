@@ -10,13 +10,17 @@ angular.module('myApp.kong', ['ngRoute'])
 }])
 
 .controller('KongCtrl', ['$scope', '$http', function($scope, $http) {
-    $http({
-        method: 'GET',
-        url: $scope.rootUrl
-    }).success(function(data, status, headers, config){
-        $scope.kong = data;
-        console.log($scope.kong);
-    }).error(function(data,status,headers,config){
-        console.log(status);
-    });
+    $scope.update = function () {
+        $http({
+            method: 'GET',
+            url: $scope.rootUrl
+        }).success(function (data, status, headers, config) {
+            $scope.kong = data;
+            console.log($scope.kong);
+        }).error(function (data, status, headers, config) {
+            console.log(status);
+        });
+    }
+
+    $scope.update();
 }]);

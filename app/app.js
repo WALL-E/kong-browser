@@ -28,7 +28,7 @@ config(function (localStorageServiceProvider) {
       .setNotify(true, true)
 })
 .controller('RootCtrl', ['$scope', 'localStorageService', '$location', function($scope, localStorageService, $location) {
-  $scope.$on('node', function(d, node) {
+  $scope.$on('nodeEndpointChange', function(d, node) {
     $scope.node = node;
     console.log("RootCtrl node:", $scope.node);
   });
@@ -41,5 +41,4 @@ config(function (localStorageServiceProvider) {
   } else {
     $scope.rootUrl = "http://" + $scope.node;
   }
-
 }]);
