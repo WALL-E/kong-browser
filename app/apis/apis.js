@@ -12,7 +12,7 @@ angular.module('myApp.apis', ['ngRoute'])
 .controller('ApisCtrl', ['$scope', '$http', function($scope, $http) {
     $http({
         method: 'GET',
-        url: rootUrl + '/apis'
+        url: $scope.rootUrl + '/apis'
     }).success(function(data, status, headers, config){
         $scope.apis = data;
         console.log($scope.apis);

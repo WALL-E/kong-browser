@@ -12,7 +12,7 @@ angular.module('myApp.status', ['ngRoute'])
 .controller('StatusCtrl', ['$scope', '$http', function($scope, $http) {
   $http({
     method: 'GET',
-    url: rootUrl + '/status'
+    url: $scope.rootUrl + '/status'
   }).success(function(data, status, headers, config){
     $scope.status = data;
     console.log($scope.status);

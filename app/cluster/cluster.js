@@ -12,7 +12,7 @@ angular.module('myApp.cluster', ['ngRoute'])
 .controller('ClusterCtrl', ['$scope', '$http', function($scope, $http) {
   $http({
     method: 'GET',
-    url: rootUrl + '/cluster'
+    url: $scope.rootUrl + '/cluster'
   }).success(function(data, status, headers, config){
     $scope.cluster = data;
     console.log($scope.cluster);

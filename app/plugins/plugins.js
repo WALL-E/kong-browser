@@ -12,7 +12,7 @@ angular.module('myApp.plugins', ['ngRoute'])
 .controller('PluginsCtrl', ['$scope', '$http', function($scope, $http) {
   $http({
     method: 'GET',
-    url: rootUrl + '/plugins'
+    url: $scope.rootUrl + '/plugins'
   }).success(function(data, status, headers, config){
     $scope.plugins = data;
     console.log($scope.plugins);

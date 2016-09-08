@@ -12,7 +12,7 @@ angular.module('myApp.consumers', ['ngRoute'])
 .controller('ConsumersCtrl', ['$scope', '$http', function($scope, $http) {
     $http({
         method: 'GET',
-        url: rootUrl + '/consumers'
+        url: $scope.rootUrl + '/consumers'
     }).success(function(data, status, headers, config){
         $scope.consumers = data;
         console.log($scope.consumers);

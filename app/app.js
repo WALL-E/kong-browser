@@ -1,6 +1,6 @@
 'use strict';
 
-var rootUrl = "http://172.28.32.102:8001";
+
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
@@ -27,10 +27,19 @@ config(function (localStorageServiceProvider) {
       .setStorageType('localStorage')
       .setNotify(true, true)
 })
-.controller('RootCtrl', ['$scope', 'localStorageService', function($scope, localStorageService) {
-  $scope.node = '';
+.controller('RootCtrl', ['$scope', 'localStorageService', '$location', function($scope, localStorageService, $location) {
   $scope.$on('node', function(d, node) {
     $scope.node = node;
     console.log("RootCtrl node:", $scope.node);
   });
+
+  $scope.node = localStorageService.get("node");
+  console.log("RootCtl Node:", $scope.node);
+  if ($scope.node == undefined) {
+    alert("You must set Kong admin endpoint");
+    $location.path("/settings");
+  } else {
+    $scope.rootUrl = "http://" + $scope.node;
+  }
+
 }]);
