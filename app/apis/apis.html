@@ -1,13 +1,23 @@
 <h1>Apis</h1>
 
 
-<div ng-repeat="api in apis.data">
-    <span>index: {{$index+1}} </span>
-    <br>
-    <span>id: {{api.id}} </span>
-    <br>
-    <span>upstream_url: {{api.upstream_url}}</span>
-    <br>
-    <span>name: {{api.name}}</span>
-</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>index</th>
+        <th>id</th>
+        <th>upstream_url</th>
+        <th>name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="api in apis.data">
+        <td>{{$index+1}}</td>
+        <td>{{api.id}}</td>
+        <td>{{api.upstream_url}}</td>
+        <td>{{api.name}}</td>
+    </tr>
+    </tbody>
+</table>
+
 <hr>

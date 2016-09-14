@@ -1,13 +1,19 @@
 <h1>Consumers</h1>
 
-
-<div ng-repeat="consumer in consumers.data">
-    <span>index: {{$index+1}} </span>
-    <br>
-    <span>id: {{consumer.id}} </span>
-    <br>
-    <span>username: {{consumer.username}}</span>
-    <br>
-    <span>custom_id: {{consumer.custom_id}}</span>
-    </div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>index</th>
+        <th>id</th>
+        <th>username/custom_id</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="consumer in consumers.data">
+        <td>{{$index+1}}</td>
+        <td>{{consumer.id}}</td>
+        <td>{{consumer.username}} {{consumer.custom_id}}</td>
+    </tr>
+    </tbody>
+</table>
 <hr>

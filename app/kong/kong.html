@@ -1,8 +1,29 @@
 <h1>Kong</h1>
 
-<p>version: {{kong.version}}</p>
-<p>hostname: {{kong.hostname}}</p>
-<p>lua_version: {{kong.lua_version}}</p>
-<p>tagline: {{kong.tagline}}</p>
-
+<table class="table table-striped table-responsive">
+    <thead>
+    <tr>
+        <th>key</th>
+        <th>value</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>version</td>
+            <td>{{kong.version}}</td>
+        </tr>
+        <tr>
+            <td>hostname</td>
+            <td>{{kong.hostname}}</td>
+        </tr>
+        <tr>
+            <td>lua_version</td>
+            <td>{{kong.lua_version}}</td>
+        </tr>
+        <tr>
+            <td>tagline</td>
+            <td>{{kong.tagline}}</td>
+        </tr>
+    </tbody>
+</table>
 <hr>

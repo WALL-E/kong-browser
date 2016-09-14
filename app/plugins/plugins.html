@@ -1,11 +1,20 @@
 <h1>Plugins</h1>
 
 
-<div ng-repeat="plugin in plugins.data">
-  <span>index: {{$index+1}} </span>
-  <br>
-  <span>name: {{plugin.name}}</span>
-  <br>
-  <span>api_id: {{plugin.api_id}}</span>
-</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>index</th>
+    <th>name</th>
+    <th>api_id</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="plugin in plugins.data">
+    <td>{{$index+1}}</td>
+    <td>{{plugin.name}}</td>
+    <td>{{plugin.api_id}}</td>
+  </tr>
+  </tbody>
+</table>
 <hr>

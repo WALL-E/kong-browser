@@ -1,14 +1,58 @@
 <h1>Status</h1>
 
 <h3>Server</h3>
-<p>connections_handled: {{status.server.connections_handled}}</p>
-<p>total_requests: {{status.server.total_requests}}</p>
-<p>connections_accepted: {{status.server.connections_accepted}}</p>
+<table class="table table-striped table-responsive">
+    <thead>
+    <tr>
+        <th>key</th>
+        <th>value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>connections_handled</td>
+        <td>{{status.server.connections_handled}}</td>
+    </tr>
+    <tr>
+        <td>total_requests</td>
+        <td>{{status.server.total_requests}}</td>
+    </tr>
+    <tr>
+        <td>connections_accepted</td>
+        <td>{{status.server.connections_accepted}}</td>
+    </tr>
+    <tr>
+        <td>tagline</td>
+        <td>{{status.server.connections_accepted}}</td>
+    </tr>
+    </tbody>
+</table>
 
 <h3>Database</h3>
-<p>nodes: {{status.database.nodes}}</p>
-<p>apis: {{status.database.apis}}</p>
-<p>consumers: {{status.database.consumers}}</p>
-<p>plugins: {{status.database.plugins}}</p>
-
+<table class="table table-striped table-responsive">
+    <thead>
+    <tr>
+        <th>key</th>
+        <th>value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>nodes</td>
+        <td>{{status.database.nodes}}</td>
+    </tr>
+    <tr>
+        <td>apis</td>
+        <td>{{status.database.apis}}</td>
+    </tr>
+    <tr>
+        <td>consumers</td>
+        <td>{{status.database.consumers}}</td>
+    </tr>
+    <tr>
+        <td>plugins</td>
+        <td>{{status.database.plugins}}</td>
+    </tr>
+    </tbody>
+</table>
 <hr>
