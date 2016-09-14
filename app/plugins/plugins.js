@@ -10,6 +10,7 @@ angular.module('myApp.plugins', ['ngRoute'])
 }])
 
 .controller('PluginsCtrl', ['$scope', '$http', function($scope, $http) {
+  console.log("enter PluginsCtrl");
   $http({
     method: 'GET',
     url: $scope.rootUrl + '/plugins'

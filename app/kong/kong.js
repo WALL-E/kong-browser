@@ -9,7 +9,8 @@ angular.module('myApp.kong', ['ngRoute'])
     });
 }])
 
-.controller('KongCtrl', ['$scope', '$http', function($scope, $http) {
+.controller('KongCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
+    console.log("enter KongCtrl");
     $scope.update = function () {
         $http({
             method: 'GET',

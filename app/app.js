@@ -1,7 +1,6 @@
 'use strict';
 
 
-
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
@@ -28,17 +27,22 @@ config(function (localStorageServiceProvider) {
       .setNotify(true, true)
 })
 .controller('RootCtrl', ['$scope', 'localStorageService', '$location', function($scope, localStorageService, $location) {
-  $scope.$on('nodeEndpointChange', function(d, node) {
-    $scope.node = node;
-    console.log("RootCtrl node:", $scope.node);
-  });
+    $scope.$on('nodeEndpointChange', function(d, node) {
+        $scope.node = node;
+        console.log("RootCtrl node event@nodeEndpointChange:", $scope.node);
+        $scope.sync();
+    });
 
-  $scope.node = localStorageService.get("node");
-  console.log("RootCtl Node:", $scope.node);
-  if ($scope.node == undefined) {
-    alert("You must set Kong admin endpoint");
-    $location.path("/settings");
-  } else {
-    $scope.rootUrl = "http://" + $scope.node;
-  }
+
+    $scope.sync = function (){
+        $scope.node = localStorageService.get("node");
+        console.log("RootCtl Node:", $scope.node);
+        if ($scope.node == undefined) {
+            alert("You must set Kong admin endpoint");
+            $location.path("/settings");
+        } else {
+            $scope.rootUrl = "http://" + $scope.node;
+        }
+    }
+    $scope.sync();
 }]);

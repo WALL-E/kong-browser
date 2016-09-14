@@ -10,6 +10,7 @@ angular.module('myApp.settings', ['ngRoute'])
 }])
 
 .controller('SettingsCtrl', ['$scope', 'localStorageService', function($scope, localStorageService) {
+  console.log("enter SettingsCtrl");
   $scope.isSupported = localStorageService.isSupported;
   if(!$scope.isSupported) {
     console.log("The browser does not support the local storage");

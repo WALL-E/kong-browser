@@ -10,6 +10,7 @@ angular.module('myApp.consumers', ['ngRoute'])
 }])
 
 .controller('ConsumersCtrl', ['$scope', '$http', function($scope, $http) {
+    console.log("enter ConsumersCtrl");
     $http({
         method: 'GET',
         url: $scope.rootUrl + '/consumers'

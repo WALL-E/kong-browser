@@ -10,6 +10,7 @@ angular.module('myApp.status', ['ngRoute'])
 }])
 
 .controller('StatusCtrl', ['$scope', '$http', function($scope, $http) {
+  console.log("enter StatusCtrl");
   $http({
     method: 'GET',
     url: $scope.rootUrl + '/status'

@@ -10,6 +10,7 @@ angular.module('myApp.apis', ['ngRoute'])
 }])
 
 .controller('ApisCtrl', ['$scope', '$http', function($scope, $http) {
+    console.log("enter ApisCtrl");
     $http({
         method: 'GET',
         url: $scope.rootUrl + '/apis'

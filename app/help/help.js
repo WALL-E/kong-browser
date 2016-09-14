@@ -10,4 +10,5 @@ angular.module('myApp.help', ['ngRoute'])
 }])
 
 .controller('HelpCtrl', ['$scope', '$http', function($scope, $http) {
+    console.log("enter HelpCtrl");
 }]);

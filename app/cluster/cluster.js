@@ -10,6 +10,7 @@ angular.module('myApp.cluster', ['ngRoute'])
 }])
 
 .controller('ClusterCtrl', ['$scope', '$http', function($scope, $http) {
+  console.log("enter ClusterCtrl");
   $http({
     method: 'GET',
     url: $scope.rootUrl + '/cluster'
