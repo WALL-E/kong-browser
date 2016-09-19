@@ -14,6 +14,7 @@ angular.module('myApp', [
   'myApp.settings',
   'myApp.version',
   'LocalStorageModule',
+  'ngNotify',
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

@@ -6,6 +6,8 @@
         <th>index</th>
         <th>id</th>
         <th>username/custom_id</th>
+        <th>created_at</th>
+        <th>action</th>
     </tr>
     </thead>
     <tbody>
@@ -13,6 +15,28 @@
         <td>{{$index+1}}</td>
         <td>{{consumer.id}}</td>
         <td>{{consumer.username}} {{consumer.custom_id}}</td>
+        <td>{{consumer.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td><button type="button" class="btn btn-danger btn-sm" ng-click="delete(consumer.id)">delete</button></td>
     </tr>
     </tbody>
 </table>
+
+<form name="addConsumerForm" class="form-horizontal" role="form">
+
+    <div class="form-group">
+        <div class="col-md-2">
+            <select class="form-control" id="consumer_type" ng-model="consumerType" ng-options="a.id as a.name for a in consumerTypeMap" required>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="username_or_customer_id" ng-model="usernameOrCustomerId"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-6">
+            <button type="button" class="btn btn-primary" ng-click="add(consumerTypeArray[consumerType], usernameOrCustomerId)">add</button>
+            <button type="button" class="btn" ng-click="reset()">reset</button>
+        </div>
+    </div>
+</form>
