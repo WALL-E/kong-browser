@@ -2,18 +2,50 @@
 
 
 <table class="table table-striped">
-  <thead>
-  <tr>
-    <th>index</th>
-    <th>name</th>
-    <th>api_id</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr ng-repeat="plugin in plugins.data">
-    <td>{{$index+1}}</td>
-    <td>{{plugin.name}}</td>
-    <td>{{plugin.api_id}}</td>
-  </tr>
-  </tbody>
+    <thead>
+    <tr>
+        <th>index</th>
+        <th>name</th>
+        <th>enabled</th>
+        <th>api_id</th>
+        <th>created_at</th>
+        <th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="plugin in plugins.data">
+        <td>{{$index+1}}</td>
+        <td>{{plugin.name}}</td>
+        <td>{{plugin.enabled}}</td>
+        <td>{{plugin.api_id}}</td>
+        <td>{{plugin.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>
+            <button type="button" class="btn btn-success btn-sm" ng-click="enable(plugin.id)">Enable</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-click="disable(plugin.id)">Disable</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="delete(plugin.id)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<h1>Enable Plugins</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>index</th>
+        <th>name</th>
+        <th>enable</th>
+        <th>doc</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="plugin in enabled_plugins">
+        <td>{{$index+1}}</td>
+        <td>{{plugin.name}}</td>
+        <td>{{plugin.enable}}</td>
+        <td><a href="https://getkong.org/plugins/{{plugin.name}}/" target="_blank">view</a></td>
+    </tr>
+    </tbody>
 </table>

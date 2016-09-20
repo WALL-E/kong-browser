@@ -23,7 +23,9 @@
         <td>{{api.strip_request_path}}</td>
         <td>{{api.preserve_host}}</td>
         <td>{{api.upstream_url}}</td>
-        <td><button type="button" class="btn btn-danger btn-sm" ng-click="delete(api.id)">delete</button></td>
+        <td>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="delete(api.id)">delete</button>
+        </td>
     </tr>
     </tbody>
 </table>
@@ -31,38 +33,46 @@
 <form name="addApiForm" class="form-horizontal" role="form">
     <div class="form-group">
         <label for="name" class="col-md-2 control-label">name</label>
-           <div class="col-md-6">
-               <input type="text" class="form-control" id="name" ng-model="name"></input>
-           </div>
+
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="name" ng-model="name"></input>
+        </div>
     </div>
     <div class="form-group">
         <label for="name" class="col-md-2 control-label">request_host</label>
+
         <div class="col-md-6">
             <input type="text" class="form-control" id="request_host" ng-model="requestHost"></input>
         </div>
     </div>
     <div class="form-group">
         <label for="name" class="col-md-2 control-label">request_path</label>
+
         <div class="col-md-6">
             <input type="text" class="form-control" id="request_path" ng-model="requestPath"></input>
         </div>
     </div>
     <div class="form-group">
         <label for="name" class="col-md-2 control-label">strip_request_path</label>
+
         <div class="col-md-2">
-            <select class="form-control" id="strip_request_path" ng-model="stripRequestPath" ng-options="a.id as a.name for a in boolMap" required>
+            <select class="form-control" id="strip_request_path" ng-model="stripRequestPath"
+                    ng-options="a.id as a.name for a in boolMap" required>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label for="name" class="col-md-2 control-label">preserve_host</label>
+
         <div class="col-md-2">
-            <select class="form-control" id="preserve_host" ng-model="preserveHost" ng-options="a.id as a.name for a in boolMap" required>
+            <select class="form-control" id="preserve_host" ng-model="preserveHost"
+                    ng-options="a.id as a.name for a in boolMap" required>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label for="name" class="col-md-2 control-label">upstream_url</label>
+
         <div class="col-md-6">
             <input type="text" class="form-control" id="upstream_url" ng-model="upstreamUrl"></input>
         </div>
