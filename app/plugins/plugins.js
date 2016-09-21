@@ -11,9 +11,10 @@ angular.module('myApp.plugins', ['ngRoute'])
 
     .controller('PluginsCtrl', ['$scope', '$http', 'ngNotify', '$location', function ($scope, $http, ngNotify, $location) {
         console.log("enter PluginsCtrl");
+        var api_id = $location.search().api_id;
+        $scope.prompt = api_id == undefined && "Global" || "API";
 
         $scope.location2plguin = function(val){
-            var api_id = $location.search().api_id;
             $location.path("/" + val).search("api_id", api_id);
         }
 
@@ -21,8 +22,14 @@ angular.module('myApp.plugins', ['ngRoute'])
             $http({
                 method: 'GET',
                 url: $scope.rootUrl + '/plugins'
-            }).success(function (data, status, headers, config) {
-                $scope.plugins = data;
+            }).success(function (body, status, headers, config) {
+                $scope.plugins = new Array();
+                angular.forEach(body.data, function(val, index, array){
+                    console.log(val.api_id, "=?", api_id);
+                    if (val.api_id == api_id) {
+                        $scope.plugins.push(val);
+                    }
+                });
             }).error(function (data, status, headers, config) {
                 console.log(status);
             });
