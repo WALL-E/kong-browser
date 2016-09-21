@@ -56,7 +56,6 @@ angular.module('myApp.apis', ['ngRoute'])
                 url: $scope.rootUrl + '/apis'
             }).success(function (data, status, headers, config) {
                 $scope.apis = data;
-                console.log($scope.apis);
             }).error(function (data, status, headers, config) {
                 console.log(status);
             });

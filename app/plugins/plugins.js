@@ -9,8 +9,13 @@ angular.module('myApp.plugins', ['ngRoute'])
         });
     }])
 
-    .controller('PluginsCtrl', ['$scope', '$http', 'ngNotify', function ($scope, $http, ngNotify) {
+    .controller('PluginsCtrl', ['$scope', '$http', 'ngNotify', '$location', function ($scope, $http, ngNotify, $location) {
         console.log("enter PluginsCtrl");
+
+        $scope.location2plguin = function(val){
+            var api_id = $location.search().api_id;
+            $location.path("/" + val).search("api_id", api_id);
+        }
 
         $scope.update = function () {
             $http({
@@ -18,7 +23,6 @@ angular.module('myApp.plugins', ['ngRoute'])
                 url: $scope.rootUrl + '/plugins'
             }).success(function (data, status, headers, config) {
                 $scope.plugins = data;
-                console.log($scope.plugins);
             }).error(function (data, status, headers, config) {
                 console.log(status);
             });

@@ -16,7 +16,6 @@ angular.module('myApp.status', ['ngRoute'])
     url: $scope.rootUrl + '/status'
   }).success(function(data, status, headers, config){
     $scope.status = data;
-    console.log($scope.status);
   }).error(function(data,status,headers,config){
     console.log(status);
   });

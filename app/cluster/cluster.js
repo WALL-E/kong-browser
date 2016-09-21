@@ -16,7 +16,6 @@ angular.module('myApp.cluster', ['ngRoute'])
     url: $scope.rootUrl + '/cluster'
   }).success(function(data, status, headers, config){
     $scope.cluster = data;
-    console.log($scope.cluster);
   }).error(function(data,status,headers,config){
     console.log(status);
   });

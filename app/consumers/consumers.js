@@ -45,7 +45,6 @@ angular.module('myApp.consumers', ['ngRoute'])
                 url: $scope.rootUrl + '/consumers'
             }).success(function (data, status, headers, config) {
                 $scope.consumers = data;
-                console.log($scope.consumers);
             }).error(function (data, status, headers, config) {
                 console.log(status);
             });

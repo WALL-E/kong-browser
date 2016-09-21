@@ -17,7 +17,6 @@ angular.module('myApp.kong', ['ngRoute'])
             url: $scope.rootUrl
         }).success(function (data, status, headers, config) {
             $scope.kong = data;
-            console.log($scope.kong);
         }).error(function (data, status, headers, config) {
             console.log(status);
         });
