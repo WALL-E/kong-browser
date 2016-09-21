@@ -38,7 +38,7 @@
         <th>name</th>
         <th>enable</th>
         <th>doc</th>
-        <th>more</th>
+        <th>action</th>
     </tr>
     </thead>
     <tbody>
@@ -46,8 +46,10 @@
         <td>{{$index+1}}</td>
         <td>{{plugin.name}}</td>
         <td>{{plugin.enable}}</td>
-        <td><a href="https://getkong.org/plugins/{{plugin.name}}/" target="_blank">view</a></td>
-        <td><a href="#!/{{plugin.name}}">config</a></td>
+        <td><a href="https://getkong.org/plugins/{{plugin.name}}/" target="_blank">view doc</a></td>
+        <td>
+            <button type="button" class="btn btn-success btn-sm" ng-click="custom({{plugin.name}})">custom</button>
+        </td>
     </tr>
     </tbody>
 </table>

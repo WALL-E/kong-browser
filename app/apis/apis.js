@@ -9,7 +9,7 @@ angular.module('myApp.apis', ['ngRoute'])
         });
     }])
 
-    .controller('ApisCtrl', ['$scope', '$http', 'ngNotify', function ($scope, $http, ngNotify) {
+    .controller('ApisCtrl', ['$scope', '$http', 'ngNotify', '$location', function ($scope, $http, ngNotify, $location) {
         console.log("enter ApisCtrl");
 
         $scope.boolMap = [
@@ -25,6 +25,9 @@ angular.module('myApp.apis', ['ngRoute'])
         $scope.preserveHost = 0;
         $scope.upstreamUrl = "";
 
+        $scope.location2plguin = function(val){
+            $location.path("/plugins").search({api_id:val});
+        }
         $scope.add = function () {
             var data = {
                 name: $scope.name,
