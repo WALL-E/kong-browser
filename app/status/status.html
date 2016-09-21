@@ -25,6 +25,18 @@
         <td>tagline</td>
         <td>{{status.server.connections_accepted}}</td>
     </tr>
+    <tr>
+        <td>connections_active</td>
+        <td>{{status.server.connections_active}}</td>
+    </tr>
+    <tr>
+        <td>connections_reading</td>
+        <td>{{status.server.connections_reading}}</td>
+    </tr>
+    <tr>
+        <td>connections_waiting</td>
+        <td>{{status.server.connections_waiting}}</td>
+    </tr>
     </tbody>
 </table>
 
@@ -52,6 +64,14 @@
     <tr>
         <td>plugins</td>
         <td>{{status.database.plugins}}</td>
+    </tr>
+    <tr>
+        <td>acls</td>
+        <td>{{status.database.acls}}</td>
+    </tr>
+    <tr>
+        <td>basicauth_credentials</td>
+        <td>{{status.database.basicauth_credentials}}</td>
     </tr>
     </tbody>
 </table>
