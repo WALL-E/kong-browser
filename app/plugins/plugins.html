@@ -36,7 +36,6 @@
     <tr>
         <th>index</th>
         <th>name</th>
-        <th>enable</th>
         <th>doc</th>
         <th>action</th>
     </tr>
@@ -44,11 +43,10 @@
     <tbody>
     <tr ng-repeat="plugin in enabled_plugins">
         <td>{{$index+1}}</td>
-        <td>{{plugin.name}}</td>
-        <td>{{plugin.enable}}</td>
-        <td><a href="https://getkong.org/plugins/{{plugin.name}}/" target="_blank">view doc</a></td>
+        <td>{{plugin}}</td>
+        <td><a href="https://getkong.org/plugins/{{plugin}}/" target="_blank">view doc</a></td>
         <td>
-            <button type="button" class="btn btn-success btn-sm" ng-click="location2plguin(plugin.name)">custom</button>
+            <button type="button" class="btn btn-success btn-sm" ng-click="location2plguin(plugin)">custom</button>
         </td>
     </tr>
     </tbody>

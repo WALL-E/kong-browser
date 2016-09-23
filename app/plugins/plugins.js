@@ -38,12 +38,9 @@ angular.module('myApp.plugins', ['ngRoute'])
                 method: 'GET',
                 url: $scope.rootUrl + '/plugins/enabled'
             }).success(function (data, status, headers, config) {
-                $scope.enabled_plugins = new Array();
-                angular.forEach(data.enabled_plugins, function(data,index,array){
-                    $scope.enabled_plugins.push({name:index, enable:data});
-                });
+                $scope.enabled_plugins = data.enabled_plugins;
             }).error(function (data, status, headers, config) {
-                console.log(data);
+                console.log(status);
             });
         }
 
