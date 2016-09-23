@@ -14,7 +14,7 @@ angular.module('myApp.apis', ['ngRoute'])
 
         $scope.boolMap = [
             {'id': 0, 'name': 'false'},
-            {'id': 1, 'name': 'ture'},
+            {'id': 1, 'name': 'ture'}
         ];
         $scope.boolArray = ['false', 'true'];
 
