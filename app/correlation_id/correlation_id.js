@@ -65,14 +65,20 @@ angular.module('myApp.correlationId', ['ngRoute'])
                 name: $scope.name,
                 config: {
                     header_name: $scope.headerName,
-                    generator: $scope.generator,
+                    generator: $scope.id2generator($scope.generator),
                     echo_downstream: $scope.id2generator($scope.isEchoDownstream)
                 }
             };
 
+            var url;
+            if (api_id == undefined) {
+                url = $scope.rootUrl + '/plugins';
+            }else{
+                url = $scope.rootUrl + '/apis/' + api_id + "/plugins";
+            }
             $http({
                 method: 'POST',
-                url: $scope.rootUrl + '/plugins',
+                url: url,
                 data: data
             }).success(function (data, status, headers, config, statusText) {
                 $scope.update();
