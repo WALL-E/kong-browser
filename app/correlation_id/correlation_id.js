@@ -48,7 +48,6 @@ angular.module('myApp.correlationId', ['ngRoute'])
             }).success(function (body, status, headers, config) {
                 angular.forEach(body.data, function(val, index, array){
                     if (val.name == $scope.name) {
-                        console.log("hit:", val);
                         $scope.headerName = val.config.header_name;
                         $scope.generator = $scope.generator2id(val.config.generator);
                         $scope.isEchoDownstream = val.config.echo_downstream;

@@ -25,7 +25,6 @@ angular.module('myApp.plugins', ['ngRoute'])
             }).success(function (body, status, headers, config) {
                 $scope.plugins = new Array();
                 angular.forEach(body.data, function(val, index, array){
-                    console.log(val.api_id, "=?", api_id);
                     if (val.api_id == api_id) {
                         $scope.plugins.push(val);
                     }
