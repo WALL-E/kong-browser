@@ -16,12 +16,12 @@ angular.module('myApp.status', ['ngRoute'])
             $http({
                 method: 'GET',
                 url: $scope.rootUrl + '/status'
-            }).success(function (body, status, headers, config) {
+            }).success(function (body) {
                 $scope.status = body;
-            }).error(function (data, status, headers, config) {
+            }).error(function (data, status) {
                 console.log(status);
             });
-        }
+        };
 
         $scope.update();
     }]);

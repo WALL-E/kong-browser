@@ -9,18 +9,18 @@ angular.module('myApp.kong', ['ngRoute'])
     });
 }])
 
-.controller('KongCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
+.controller('KongCtrl', ['$scope', '$http', function($scope, $http) {
     console.log("enter KongCtrl");
     $scope.update = function () {
         $http({
             method: 'GET',
             url: $scope.rootUrl
-        }).success(function (data, status, headers, config) {
+        }).success(function (data) {
             $scope.kong = data;
-        }).error(function (data, status, headers, config) {
+        }).error(function (data, status) {
             console.log(status);
         });
-    }
+    };
 
     $scope.update();
 }]);

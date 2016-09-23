@@ -22,22 +22,22 @@ angular.module('myApp.settings', ['ngRoute'])
 
   $scope.setItem = function (key, val) {
       return localStorageService.set(key, val);
-  }
+  };
 
   $scope.getItem = function (key) {
       return localStorageService.get(key);
-  }
+  };
 
   $scope.reset = function () {
     $scope.node = "";
-  }
+  };
 
   $scope.submit = function () {
     $scope.setItem("node", $scope.node);
     $scope.$emit('nodeEndpointChange', $scope.node);
     alert("submit ok");
-  }
+  };
 
   $scope.node = $scope.getItem("node");
   $scope.$emit('nodeEndpointChange', $scope.node);
-}])
+}]);

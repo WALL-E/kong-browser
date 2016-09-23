@@ -18,36 +18,36 @@ angular.module('myApp.cluster', ['ngRoute'])
             $http({
                 method: 'GET',
                 url: $scope.rootUrl + '/cluster'
-            }).success(function (body, status, headers, config) {
+            }).success(function (body) {
                 $scope.cluster = body.data;
-            }).error(function (body, status, headers, config) {
+            }).error(function (body, status) {
                 console.log(status);
             });
-        }
+        };
 
         $scope.forceLeave = function (val) {
             $http({
                 method: 'DELETE',
                 url: $scope.rootUrl + '/cluster',
-                params:{name:val},
-            }).success(function (body, status, headers, config) {
+                params:{name:val}
+            }).success(function () {
                 ngNotify.set("delete cluster ok");
-            }).error(function (body, status, headers, config) {
+            }).error(function () {
                 ngNotify.set("delete cluster failed");
             });
-        }
+        };
 
         $scope.add = function () {
             $http({
                 method: 'POST',
                 url: $scope.rootUrl + '/cluster',
-                data:{address: $scope.newNode},
-            }).success(function (body, status, headers, config) {
+                data:{address: $scope.newNode}
+            }).success(function () {
                 ngNotify.set("add cluster ok");
-            }).error(function (body, status, headers, config) {
+            }).error(function () {
                 ngNotify.set("add cluster failed");
             });
-        }
+        };
 
         $scope.update();
     }]);

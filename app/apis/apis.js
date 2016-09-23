@@ -27,7 +27,7 @@ angular.module('myApp.apis', ['ngRoute'])
 
         $scope.location2plguin = function(val){
             $location.path("/plugins").search({api_id:val});
-        }
+        };
         $scope.add = function () {
             var data = {
                 name: $scope.name,
@@ -42,36 +42,36 @@ angular.module('myApp.apis', ['ngRoute'])
                 method: 'POST',
                 url: $scope.rootUrl + '/apis',
                 data: data
-            }).success(function (data, status, headers, config, statusText) {
+            }).success(function () {
                 $scope.update();
                 ngNotify.set('add api ok!');
-            }).error(function (data, status, headers, config, statusText) {
+            }).error(function () {
                 ngNotify.set("add api failed, " + angular.toJson(data));
             });
-        }
+        };
 
         $scope.update = function () {
             $http({
                 method: 'GET',
                 url: $scope.rootUrl + '/apis'
-            }).success(function (data, status, headers, config) {
+            }).success(function (data) {
                 $scope.apis = data;
-            }).error(function (data, status, headers, config) {
+            }).error(function () {
                 console.log(status);
             });
-        }
+        };
 
         $scope.delete = function (val) {
             $http({
                 method: 'DELETE',
-                url: $scope.rootUrl + '/apis' + '/' + val,
-            }).success(function (data, status, headers, config) {
+                url: $scope.rootUrl + '/apis' + '/' + val
+            }).success(function () {
                 $scope.update();
                 ngNotify.set('delete api ok!');
-            }).error(function (data, status, headers, config) {
+            }).error(function () {
                 ngNotify.set("delete api failed");
             });
-        }
+        };
 
         $scope.reset = function () {
             $scope.name = "";
@@ -80,7 +80,7 @@ angular.module('myApp.apis', ['ngRoute'])
             $scope.stripRequestPath = 0;
             $scope.preserveHost = 0;
             $scope.upstreamUrl = "";
-        }
+        };
 
         $scope.update();
     }]);
