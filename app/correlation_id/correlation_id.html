@@ -1,3 +1,41 @@
-<h1>Plugins/correlation-id</h1>
+<h1>{{prompt}}/Plugins/correlation-id</h1>
+<br>
+<form name="pluginsForm" class="form-horizontal" role="form">
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">name</label>
 
-<h2>api_id: {{api_id}}</h2>
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="name" ng-model="name" ng-disabled="true"></input>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="header_name" class="col-md-2 control-label">header_name</label>
+
+        <div class="col-md-6">
+            <input type="text" class="form-control" id="header_name" ng-model="headerName"></input>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="col-md-2 control-label">generator</label>
+        <div class="col-md-2">
+            <select class="form-control" id="generator" ng-model="generator"
+                    ng-options="a.id as a.name for a in generatorMap" required>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">echo_downstream</label>
+        <div class="col-md-2">
+            <label class="checkbox-inline">
+                <input type="checkbox" ng-model="isEchoDownstream"> Enable
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-6">
+            <button type="button" class="btn btn-primary" ng-click="addOrUpdate()">add/update</button>
+            <button type="button" class="btn" ng-click="reset()">reset</button>
+        </div>
+    </div>
+</form>
