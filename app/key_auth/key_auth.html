@@ -17,6 +17,9 @@
                         ng-options="a.id as (a.custom_id || a.username) for a in consumers" required>
                 </select>
             </div>
+            <div class="col-md-2" ng-hide="consumerId==''">
+                <button type="button" class="btn btn-primary" ng-click="viewKey()">viewKey</button>
+            </div>
         </div>
         <div class="form-group">
             <label for="key" class="col-md-2 control-label">Key</label>
@@ -27,9 +30,31 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-6">
-                <button type="button" class="btn btn-primary" ng-click="addKey()">addKey</button>
+                <button type="button" class="btn btn-success" ng-click="addKey()">addKey</button>
+
                 <button type="button" class="btn" ng-click="reset()">reset</button>
             </div>
         </div>
     </form>
 </div>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>index</th>
+        <th>consumer_id</th>
+        <th>key</th>
+        <th>created_at</th>
+        <th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="key in keys">
+        <td>{{$index+1}}</td>
+        <td>{{key.consumer_id}}</td>
+        <td>{{key.key}}</td>
+        <td>{{key.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td><button type="button" class="btn btn-danger" ng-click="deleteKey(key.id)">delete</button></td>
+    </tr>
+    </tbody>
+</table>

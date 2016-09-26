@@ -123,5 +123,28 @@ angular.module('myApp.keyAuth', ['ngRoute'])
             });
         };
 
+        $scope.viewKey = function() {
+            $http({
+                method: 'GET',
+                url: $scope.rootUrl + '/consumers' + '/' + $scope.consumerId + '/' + $scope.name + '/'
+            }).success(function (body, status, headers, config) {
+                $scope.keys = body.data;
+            }).error(function (data, status, headers, config) {
+                console.log(status);
+            });
+        }
+
+        $scope.deleteKey = function(val) {
+            $http({
+                method: 'DELETE',
+                url: $scope.rootUrl + '/consumers' + '/' + $scope.consumerId + '/' + $scope.name + '/' + val
+            }).success(function (body, status, headers, config) {
+                $scope.viewKey();
+                ngNotify.set('delete key ok!');
+            }).error(function (data, status, headers, config) {
+                ngNotify.set('delete key failed!');
+            });
+        }
+
         $scope.update();
     }])
