@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>kong-browser</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>kong-browser</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/ng-notify/dist/ng-notify.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body ng-controller="RootCtrl">
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
-      <div class="col-md-3 navbar-header">
-        <a class="navbar-brand" href="#">Kong Browser</a>
-      </div>
-      <div class="col-md-7">
-        <div class="braodcast">
-          <span>Admin Enpoint: {{node}}</span>
+        <div class="col-md-3 navbar-header">
+            <a class="navbar-brand" href="#">Kong Browser</a>
         </div>
-      </div>
-      <div class="col-md-2 navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#!/settings">settings</a></li>
-          <li><a href="#!/help">help</a></li>
-        </ul>
-      </div>
+        <div class="col-md-7">
+            <div class="braodcast">
+                <span>Admin Enpoint: {{node}}</span>
+            </div>
+        </div>
+        <div class="col-md-2 navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#!/settings">settings</a></li>
+                <li><a href="#!/help">help</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
+</div>
 
-  <div class="container-fluid">
+<div class="container-fluid">
     <div class="row">
-      <div class="col-md-2 sidebar" style="padding-top:10px;">
-        <ul class="nav nav-sidebar">
-          <li class=""><a href="#!/kong">Kong</a></li>
-          <li class=""><a href="#!/status">Status</a></li>
-          <li class=""><a href="#!/cluster">Cluster</a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
-          <li class=""><a href="#!/apis">Apis</a></li>
-          <li class=""><a href="#!/consumers">Consumers</a></li>
-          <li class=""><a href="#!/plugins">Plugins</a></li>
-        </ul>
-      </div>
-      <div class="col-md-10 col-md-offset-2 main">
-        <div ng-view></div>
-        <div class="footer">
-          <hr>
-          kong-brower: v<span app-version></span>
+        <div class="col-md-2 sidebar" style="padding-top:10px;">
+            <ul class="nav nav-sidebar">
+                <li class=""><a href="#!/kong">Kong</a></li>
+                <li class=""><a href="#!/status">Status</a></li>
+                <li class=""><a href="#!/cluster">Cluster</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li class=""><a href="#!/apis">Apis</a></li>
+                <li class=""><a href="#!/consumers">Consumers</a></li>
+                <li class=""><a href="#!/plugins">Plugins</a></li>
+            </ul>
         </div>
-      </div>
+        <div class="col-md-10 col-md-offset-2 main">
+            <div ng-view></div>
+            <div class="footer">
+                <hr>
+                kong-brower: v<span app-version></span>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
-  <script src="bower_components/ng-notify/dist/ng-notify.min.js"></script>
-  <script src="app.js"></script>
-  <script src="status/status.js"></script>
-  <script src="cluster/cluster.js"></script>
-  <script src="apis/apis.js"></script>
-  <script src="consumers/consumers.js"></script>
-  <script src="plugins/plugins.js"></script>
-  <script src="kong/kong.js"></script>
-  <script src="help/help.js"></script>
-  <script src="settings/settings.js"></script>
-  <script src="correlation_id/correlation_id.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="bower_components/ng-notify/dist/ng-notify.min.js"></script>
+<script src="app.js"></script>
+<script src="status/status.js"></script>
+<script src="cluster/cluster.js"></script>
+<script src="apis/apis.js"></script>
+<script src="consumers/consumers.js"></script>
+<script src="plugins/plugins.js"></script>
+<script src="kong/kong.js"></script>
+<script src="help/help.js"></script>
+<script src="settings/settings.js"></script>
+<script src="correlation_id/correlation_id.js"></script>
+<script src="key_auth/key_auth.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

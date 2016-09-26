@@ -1,0 +1,35 @@
+<h1>{{prompt}}/Plugins/key-auth</h1>
+<br>
+<button type="button" class="btn btn-primary" ng-show="isUndefined(id)" ng-click="add()">Add</button>
+<button type="button" class="btn btn-success" ng-hide="isUndefined(id)" ng-click="enable()">Enable</button>
+<button type="button" class="btn btn-success" ng-hide="isUndefined(id)" ng-click="disable()">Disable</button>
+<button type="button" class="btn btn-danger" ng-hide="isUndefined(id)" ng-click="delete()">Delete</button>
+<div ng-hide="isUndefined(id)">
+    <h3>Provision key credentials for your Consumer</h3>
+    <br>
+
+    <form name="pluginsForm" class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="consumer_id" class="col-md-2 control-label">Consumers</label>
+
+            <div class="col-md-2">
+                <select class="form-control" id="consumer_id" ng-model="consumerId"
+                        ng-options="a.id as (a.custom_id || a.username) for a in consumers" required>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="key" class="col-md-2 control-label">Key</label>
+
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="key" ng-model="key"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <button type="button" class="btn btn-primary" ng-click="addKey()">addKey</button>
+                <button type="button" class="btn" ng-click="reset()">reset</button>
+            </div>
+        </div>
+    </form>
+</div>

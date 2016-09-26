@@ -14,6 +14,7 @@ angular.module('myApp', [
     'myApp.settings',
     'myApp.version',
     'myApp.correlationId',
+    'myApp.keyAuth',
     'LocalStorageModule',
     'ngNotify',
 ]).
