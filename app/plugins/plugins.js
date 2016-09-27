@@ -12,10 +12,11 @@ angular.module('myApp.plugins', ['ngRoute'])
     .controller('PluginsCtrl', ['$scope', '$http', 'ngNotify', '$location', function ($scope, $http, ngNotify, $location) {
         console.log("enter PluginsCtrl");
         var api_id = $location.search().api_id;
+        var consumer_id = $location.search().consumer_id;
         $scope.prompt = api_id == undefined && "Global" || "API";
 
         $scope.location2plguin = function(val){
-            $location.path("/" + val).search("api_id", api_id);
+            $location.path("/" + val).search("api_id", api_id).search("consumer_id", consumer_id);
         };
 
         $scope.update = function () {

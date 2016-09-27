@@ -13,10 +13,11 @@ angular.module('myApp.keyAuth', ['ngRoute'])
         console.log("enter keyAuthCtrl");
 
         var api_id = $location.search().api_id;
+        var consumer_id = $location.search().consumer_id;
         $scope.prompt = api_id == undefined && "Global" || "API";
 
         $scope.name = 'key-auth';
-        $scope.consumerId = '';
+        $scope.consumerId = consumer_id !== undefined && consumer_id || '';
         $scope.key = '';
 
         $scope.isUndefined = function (val) {

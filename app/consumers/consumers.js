@@ -9,7 +9,7 @@ angular.module('myApp.consumers', ['ngRoute'])
         });
     }])
 
-    .controller('ConsumersCtrl', ['$scope', '$http', 'ngNotify', function ($scope, $http, ngNotify) {
+    .controller('ConsumersCtrl', ['$scope', '$http', 'ngNotify', '$location', function ($scope, $http, ngNotify, $location) {
         console.log("enter ConsumersCtrl");
 
         $scope.consumerTypeMap = [
@@ -20,6 +20,10 @@ angular.module('myApp.consumers', ['ngRoute'])
 
         $scope.consumerType = 0;
         $scope.usernameOrCustomerId = "";
+
+        $scope.location2plguin = function(val){
+            $location.path("/plugins").search({consumer_id: val});
+        };
 
         $scope.add = function () {
             if ($scope.consumerType === 0) {

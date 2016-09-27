@@ -16,7 +16,10 @@
         <td>{{consumer.id}}</td>
         <td>{{consumer.username}} {{consumer.custom_id}}</td>
         <td>{{consumer.created_at | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-        <td><button type="button" class="btn btn-danger btn-sm" ng-click="delete(consumer.id)">delete</button></td>
+        <td>
+            <button type="button" class="btn btn-success btn-sm" ng-click="location2plguin(consumer.id)">Config Plguin</button>
+            <button type="button" class="btn btn-danger btn-sm" ng-click="delete(consumer.id)">delete</button>
+        </td>
     </tr>
     </tbody>
 </table>
