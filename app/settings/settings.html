@@ -1,12 +1,15 @@
 <h1>Settings</h1>
 
+<P>These settings allow you to configure your browser for the Consul Web UI. Everything is saved to localstorage, and should persist through visits and browser usage.</P>
+
+  <p>Settings are automatically persisted upon modification, so no manual save is required.</P>
 <form class="form-horizontal" role="form" ng-submit="submit()">
   <div class="form-group">
     <label for="node" class="col-md-3 control-label">Admin Endpoint: </label>
     <div class="col-md-4">
       <input type="text" class="form-control" id="node" name="node" ng-model="node" required>
     </div>
-    <span for='node' class="col-md-3 control-label text-left">Just add one of the clusters</span>
+    <span for='node' class="col-md-3 control-label text-left">Note: just add one of the clusters</span>
   </div>
 
   <div class="form-group">
