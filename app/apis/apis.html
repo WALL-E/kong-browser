@@ -8,7 +8,7 @@
         <th>name</th>
         <th>request_host</th>
         <th>request_path</th>
-        <th>strip_request_path</th>
+        <th>strip_uri</th>
         <th>preserve_host</th>
         <th>upstream_url</th>
         <th>action</th>
@@ -18,9 +18,9 @@
     <tr ng-repeat="api in apis.data">
         <td>{{$index+1}}</td>
         <td>{{api.name}}</td>
-        <td>{{api.request_host}}</td>
+        <td>{{api.hosts}}</td>
         <td>{{api.request_path}}</td>
-        <td>{{api.strip_request_path}}</td>
+        <td>{{api.strip_uri}}</td>
         <td>{{api.preserve_host}}</td>
         <td>{{api.upstream_url}}</td>
         <td>
